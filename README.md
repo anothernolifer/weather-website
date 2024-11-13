@@ -6,7 +6,7 @@ A new Flutter project.
 
 Weather website created using openweathermap.org's api in flutter
 
-##Assets
+## Assets
 
 Icons from dezgo.com
 Images from pixlr.com
