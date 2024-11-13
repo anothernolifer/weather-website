@@ -10,4 +10,4 @@ Weather website created using openweathermap.org's api in flutter
 
 Icons from dezgo.com
 
-Images from pixlr.com
+Images from craiyon.com
