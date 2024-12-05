@@ -1,13 +1,15 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:geolocator/geolocator.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class WeatherService {
-  final String apiKey = 'f582c154f04368a1d21532d3932ef4c5';
+  final String apiKey = dotenv.env['API_KEY'] ?? '';
+  final String apiUrl = dotenv.env['API_URL'] ?? '';
 
   Future<Map<String, dynamic>> getWeather(String cityName) async {
     final response = await http.get(Uri.parse(
-        'http://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=$apiKey&units=metric'));
+        '$apiUrl?q=$cityName&appid=$apiKey&units=metric'));
 
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
@@ -22,7 +24,7 @@ class WeatherService {
 
     double lat = position.latitude, lon = position.longitude;
     final response = await http.get(Uri.parse(
-        'http://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$apiKey&units=metric'));
+        '$apiUrl?lat=$lat&lon=$lon&appid=$apiKey&units=metric'));
 
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
