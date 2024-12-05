@@ -4,7 +4,8 @@ import 'package:intl/intl.dart';
 import 'package:weather/services/weather_services.dart';
 import 'package:weather/widget/weather_data_tile.dart';
 
-void main() {
+void main() async{
+  await dotenv.load();
   runApp(const WeatherApp());
 }
 
