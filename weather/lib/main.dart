@@ -3,6 +3,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:intl/intl.dart';
 import 'package:weather/services/weather_services.dart';
 import 'package:weather/widget/weather_data_tile.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async{
   await dotenv.load();
